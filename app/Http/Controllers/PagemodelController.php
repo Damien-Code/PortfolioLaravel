@@ -14,8 +14,8 @@ class PagemodelController extends Controller
     public function index()
     {
         //
-
-        require view('index');
+        $title = 'Page Model';
+        return view('index');
     }
 
     public function contact()
