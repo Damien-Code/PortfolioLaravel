@@ -12,8 +12,8 @@ class TtgController extends Controller
      */
     public function index()
     {
-        //
-        return response('We are in the ttg controller');
+        $games = ttg::all();
+        return view('ttg.index', ['games' => $games]);
     }
 
     /**
@@ -29,7 +29,13 @@ class TtgController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'title' => 'required|string|max:200',
+            'nop' => 'required|integer',
+            'description' => 'required|string|max:200',
+        ]);
+        ttg::create($validate);
+         return redirect(route('ttg.index'));
     }
 
     /**
@@ -45,7 +51,8 @@ class TtgController extends Controller
      */
     public function edit(ttg $ttg)
     {
-        //
+
+        return view('ttg.edit', ['ttg' => $ttg]);
     }
 
     /**
@@ -53,7 +60,13 @@ class TtgController extends Controller
      */
     public function update(Request $request, ttg $ttg)
     {
-        //
+        $validate = $request->validate([
+            'title' => 'required|string|max:200',
+            'nop' => 'required|integer',
+            'description' => 'required|string|max:200',
+        ]);
+        $ttg->update($validate);
+        return redirect(route('ttg.index'));
     }
 
     /**
@@ -61,6 +74,7 @@ class TtgController extends Controller
      */
     public function destroy(ttg $ttg)
     {
-        //
+        $ttg->delete();
+        return redirect(route('ttg.index'));
     }
 }

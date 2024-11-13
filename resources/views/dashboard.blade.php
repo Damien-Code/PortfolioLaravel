@@ -14,4 +14,7 @@
             </div>
         </div>
     </div>
+    <div>
+        <a href="{{route('ttg.index')}}"><button>TTG</button></a>
+    </div>
 </x-app-layout>
