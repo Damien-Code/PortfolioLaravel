@@ -1,11 +1,13 @@
-
+<?php
+require "../resources/views/layout/header.php"
+    ?>
     <!--            Titel           -->
 
 <main>
     <!--            main titel      -->
     <!--        echo de titel die ik in de controller definieer-->
     <section>
-        <h2 class="pageTitle">Hello</h2>
+        <h2 class="pageTitle">{{ $title }}</h2>
     </section>
     <section class="about-text">
         <section>
@@ -53,7 +55,7 @@
             </svg>
         </a>
     </section>
-    <form action="/">
+    <form action="/profile">
         <button>
             Back
         </button>

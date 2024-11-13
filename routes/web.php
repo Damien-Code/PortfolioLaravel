@@ -1,12 +1,24 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagemodelController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TestController;
-use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TtgController;
 
-Route::get('/', [PagemodelController::class, 'index']);
-Route::get('/test', [TestController::class, 'test']);
-Route::get('/contact', [ContactController::class, 'contact']);
-Route::get('/profile', [ProfileController::class, 'profile']);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::resource('ttg', TtgController::class)
+    ->only(['index'])
+    ->middleware(['auth', 'verified']);
+require __DIR__.'/auth.php';

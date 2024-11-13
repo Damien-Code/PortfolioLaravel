@@ -1,6 +1,6 @@
 <div>
     <!-- Always remember that you are absolutely unique. Just like everyone else. - Margaret Mead -->
-    <form action="/profile">
+    <form action="/contact">
         <button>
             Back
         </button>

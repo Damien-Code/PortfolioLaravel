@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorepagemodelRequest;
-use App\Http\Requests\UpdatepagemodelRequest;
-use App\Models\pagemodel;
+use App\Models\ttg;
+use Illuminate\Http\Request;
 
-class PagemodelController extends Controller
+class TtgController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +13,7 @@ class PagemodelController extends Controller
     public function index()
     {
         //
-        return view('index');
-    }
-
-    public function contact()
-    {
-        require view('contact');
-
+        return response('We are in the ttg controller');
     }
 
     /**
@@ -34,7 +27,7 @@ class PagemodelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorepagemodelRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -42,7 +35,7 @@ class PagemodelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(pagemodel $pagemodel)
+    public function show(ttg $ttg)
     {
         //
     }
@@ -50,7 +43,7 @@ class PagemodelController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pagemodel $pagemodel)
+    public function edit(ttg $ttg)
     {
         //
     }
@@ -58,7 +51,7 @@ class PagemodelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatepagemodelRequest $request, pagemodel $pagemodel)
+    public function update(Request $request, ttg $ttg)
     {
         //
     }
@@ -66,7 +59,7 @@ class PagemodelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(pagemodel $pagemodel)
+    public function destroy(ttg $ttg)
     {
         //
     }

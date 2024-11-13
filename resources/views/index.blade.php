@@ -1,4 +1,6 @@
-
+<?php
+    require "../resources/views/layout/header.php"
+?>
     <!--            Main            -->
 <main id="mainIndex">
     <!--            Main titel      -->
