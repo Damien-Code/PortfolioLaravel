@@ -1,6 +1,6 @@
-<h1>Welkom bij onze TTG pagina</h1>
+<h1>TTG</h1>
 
-<h3>Create game:</h3>
+<h3>Edit your profile</h3>
 <form method="post" action="{{ route('ttg.update', $ttg->id) }}">
     @csrf
     @method('PUT')
@@ -13,4 +13,3 @@
     <input type="text" id="save" name="description" value="{{$ttg->description}}">
     <button type="submit">Update</button>
 </form>
-

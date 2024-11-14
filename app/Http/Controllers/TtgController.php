@@ -21,7 +21,7 @@ class TtgController extends Controller
      */
     public function create()
     {
-        //
+        return view('ttg.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class TtgController extends Controller
      */
     public function show(ttg $ttg)
     {
-        //
+        return view('ttg.show', ['ttg' => $ttg]);
     }
 
     /**

@@ -1,31 +1,24 @@
-<h1>Welkom bij onze TTG pagina</h1>
+<h1 class="text-green-800 font-bold">Welkom bij onze TTG pagina</h1>
 
-<h3>Create game:</h3>
-<form method="post" action="{{ route('ttg.store') }}">
-    @csrf
-    {{--    Cross site scripting--}}
-
-    <label for="title">title:</label>
-    <input type="text" id="title" name="title">
-    <label for="nop">number of players</label>
-    <input type="text" id="nop" name="nop">
-    <label for="description">description:</label>
-    <input type="text" id="save" name="description">
-    <button type="submit">Save</button>
-</form>
-<div>
-
+<a href="{{route('ttg.create')}}"><button>Create Game</button></a>
+<div class="bg-grey">
     @foreach($games as $game)
         <p>
             {{ $game->title}}
             {{ $game['nop'] }}
             {{ $game['description'] }}
         </p>
-        <a href="ttg/{{$game->id}}/edit"><button>Edit:</button></a>
-        <form method= "post" action="{{route('ttg.destroy', $game->id)}}">
+        <a href="{{route('ttg.edit', $game->id)}}">
+            <button>Edit:</button>
+        </a>
+        <form method="post" action="{{route('ttg.destroy', $game->id)}}">
             @csrf
             @method('DELETE')
             <button type="submit">Delete:</button>
         </form>
+        <a href="{{route('ttg.show', $game->id)}}">
+            <button>Show:</button>
+        </a>
     @endforeach
 </div>
+

@@ -19,6 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('ttg', TtgController::class)
-    ->only(['index', 'store', 'edit', 'update', 'destroy'])
+    ->only(['index', 'store', 'edit', 'update', 'destroy', 'show', 'create'])
     ->middleware(['auth', 'verified']);
 require __DIR__.'/auth.php';

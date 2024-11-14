@@ -11,6 +11,5 @@ class ttg extends Model
             'title',
             'nop',
             'description',
-
         ];
 }
