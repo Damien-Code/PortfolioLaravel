@@ -13,7 +13,11 @@
         {{$ttg->description}}
     </p>
     <p>
-        {{$ttg->created_at}}
+        @if($ttg->updated_at > $ttg->created_at)
+            {{$ttg->updated_at}}
+        @else
+            {{$ttg->created_at}}
+        @endif
     </p>
     <a href="{{route('ttg.index')}}"><button >Back:</button></a>
 </div>
