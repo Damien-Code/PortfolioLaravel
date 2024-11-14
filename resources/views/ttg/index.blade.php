@@ -1,4 +1,4 @@
-<h1 class="text-green-800 font-bold">Welkom bij onze TTG pagina</h1>
+<h1>Welkom bij onze TTG pagina</h1>
 
 <a href="{{route('ttg.create')}}"><button>Create Game</button></a>
 <div class="bg-grey">
